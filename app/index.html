@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Votaci&oacute;n</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='style.css' type='text/css'>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="web3.min.js?"></script>
+    <script type="text/javascript" src="wallet.js?2"></script>
+    <script type="text/javascript" src="async.min.js?"></script>
+    <script type="text/javascript" src="ethjs-provider-signer.min.js?"></script>
+    <script type="text/javascript" src="lightwallet.min.js?"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body class="loading">
+    <div id="contador">
+      <div class="fondo"></div>
+      <div class="texto"></div>
+    </div>
+    <div class="modal">
+        <div class="modal-msg">Cargando...</div>
+    </div>
+    <div id="mediascreen"></div>
+    <div id="menu">
+    </div>
+    <div id="wrapper">
+        <div id="votacion">
+            <center>
+            <h3 id="msjVotado"></h3>
+            <div id="address"></div>
+            <div class="table-responsive">
+                    <table class="tbl_candidatos">
+                    <thead>
+                        <tr>
+                            <th colspan="3" id="th_candidatos"><center><h1>Votaci&oacute;n</h1></center></th>
+                        </tr>
+                    </thead>
+                    <tbody id="candidate-rows">
+                    </tbody>
+                </table>
+                <div id="msg"></div>
+            </div>
+            </center>
+        </div>
+        <div id="wallet">
+            <div id="wallet1" style="display:none;">
+                <div id="nueva">
+                    <center><input type="text" name="userEntropy" id="userEntropy" placeholder="Ingres&aacute; tu palabra clave"/></center>
+                    <center><a href="#" onclick="newWallet()" class="boton">Crear una billetera</a></center>
+                    <center><img src="img/wallet1.png"/></center>
+                </div>
+                <div id="recuperar" class="walletinicio">
+                    <center><input type="text" name="seed" id="seed" placeholder="Ingres&aacute; tus 12 palabras Seed" value=""/></center>
+                    <center><a href="#" onclick="setSeed()" class="boton">Recuperar billetera desde Seed</a></center>
+                    <center><img src="img/wallet2.png"/></center>
+                </div>
+            </div>
+            <div id="voterinfo" style="display:none;">
+                <center><h3>Consult&aacute; tu voto</h3></center>
+                <center><input type="text" id="voter-info" placeholder="Ingres&aacute; tu Address"/></center>
+                <center><div id="votes-cast">&nbsp;</div></center>
+                <center><a onclick="lookupVoterInfo()" id="btn_buscar" class="boton">Buscar</a></center>
+            </div>
+            <div id="walletinfo">
+                <div id="wallet2" style="display:none;">
+                    <center><h3>Address de la billetera</h3></center>
+                    <center><div id="addr"></div></center>
+                </div> 
+                <div id="wallet3" style="display:none;">
+                    <center><a href="#" id="mostrarSeed" onclick="showSeed()" class="boton">Mostrar las 12 palabras Seed</a></center>
+                    <center><pre id="seedField" style="display:none;"></pre></center>
+                    <div id="margen"></div>
+                </div>
+            </div>
+        </div>
+    </div>   <!-- /wrapper -->
+</body>
+<script src="app.js"></script>
+</html>

@@ -1,0 +1,601 @@
+@import url(fonts/fonts.css);
+
+a {
+	text-decoration: none !important;
+	color:white;
+}
+a:hover, a:focus {
+    text-decoration: none !important;
+    color:#2abaa9;
+}
+
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .6 ) 
+                url('../img/loading.gif') 
+                50% 50% 
+                no-repeat;
+    background-size: 200px 200px;
+}
+
+.modal-msg {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 176px;
+    font-weight: bold;
+    color: white;
+    font-size:10.9px;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: table;
+}
+
+body {
+	background-color:#414241;
+	background-image:url('../img/bg1.jpg');
+	background-attachment:fixed;
+	background-size:cover;
+	background-repeat:no-repeat;
+	margin:0px;
+	font-family:'Open Sans', sans-serif;
+}
+h1, h2 {
+	font-size: 50px;
+	margin:0px;
+}
+h1 {
+	font-weight: lighter;
+}
+h2 {
+	font-weight: bold;
+}
+input:focus, textarea:focus {
+	outline: 0;
+}
+input, pre {
+	background-color: #a7a8aa;
+	border: 1px solid gray;
+	border-radius: 10px;
+	color: white;
+	font-family: 'Open Sans',sans-serif;
+	padding: 10px;
+	margin-top: 10px;
+}
+table {
+    color: white;
+}
+.actions {
+	margin:0px;
+	padding:0px;
+}
+.boton {
+	background-color:#2abaa9;
+	border-radius:10px;
+	color:white;
+	display:inline-block;
+	font-size:20px;
+	font-weight: bold;
+	line-height:20px;
+	margin-top:10px;
+	min-width:150px;
+	padding:10px;
+	text-decoration: none;
+}
+.boton:hover, .boton:focus {
+    color:white !important;
+}
+.btnvotar {
+    cursor:pointer;
+}
+.celdacandidato {
+    text-align:center;
+    vertical-align:middle !important;
+}
+    .celdacandidato .celdagrid1 {
+        display:inline-table;
+        text-align:right;
+        width:50%;
+    }
+    .celdacandidato .celdagrid1 img {
+        max-width:100px;
+    }
+    .celdacandidato .celdagrid2 {
+        display:inline-table;
+        text-align:left;
+        vertical-align:middle;
+        width:50%;
+    }
+    .celdacandidato .celdagrid2 h3 {
+        margin-bottom:0px;
+        margin-top:0px;
+    }
+    .celdacandidato .celdagrid2 div {
+        margin-left:10px;
+    }
+.contactogrid {
+	display:inline-table;
+	vertical-align: middle;
+	width:45%;
+	text-align:right;
+}
+.container {
+	display:table-cell;
+	width:90%;
+	margin:auto;
+	height:100%;
+	vertical-align:middle;
+	padding:30px;
+}
+.container td {
+	width:33.3%;
+}
+.container td img {
+	max-height:150px !important;
+	max-width:250px !important;
+}
+.container-center:not(#primer_c) {
+	margin-top:50px;
+}
+.container-inner {
+	margin:auto;
+}
+.field input:not(#btn_enviar), .field textarea {
+	background-color:#a7a8aa;
+	border:1px solid gray;
+	border-radius:10px;
+	color:white;
+	font-family:'Open Sans',sans-serif;
+	padding:10px;
+	margin-top:10px;
+	width:400px;
+}
+.field input:not(#btn_enviar){
+/*	width:204px;*/
+}
+.field textarea{
+	resize: none;
+	height: 200px;
+/*	width:200px;*/
+}
+.fotosomos {
+	display:inline-table;
+	vertical-align:middle;
+	width:24%;
+}
+.menuitem {
+/*	margin-right:40px;*/
+}
+.sponsor {
+	display:table-cell;
+	text-align:center;
+	vertical-align: middle;
+	width:30%;
+	margin-left:50px;
+}
+	.sponsor img {
+		margin-left:25px;
+		margin-right:25px;
+		max-height:200px;
+		min-height:50px;
+		max-width:300px;
+		min-width:50px;
+	}
+.row_sponsor {
+	display:table-row;
+}
+.strip1 {
+	min-height:520px;
+	width:100%;
+	display:table;
+	margin:0px;
+	color:white;
+/*	padding:20px;*/
+}
+.strip2 {
+	min-height:480px;
+	width:100%;
+	display:table;
+	margin:0px;
+	background-color:#2abaa9;
+	background-size:cover;
+/*	padding:20px;*/
+}
+.swal-button--confirm {
+    background-color:#2abaa9;
+}
+.swal-content input{
+    color: black;
+}
+.tbl_candidatos tr td{
+    padding:10px;
+}
+.titulo {
+	display:table-header-group;
+	width:90%;
+}
+	.titulo h1 {
+		margin-top:10px;
+	}
+.table-responsive {
+    border: none !important;
+}
+#addr {
+    color: white;
+}
+#addr pre {
+    max-width: 370px;   
+}
+#contador{
+    position: fixed;
+    height: 25px;
+    width: 100%;
+}
+    #contador .fondo {
+        background-color: black;
+        height: 100%;
+        opacity: 0.6;
+        position: absolute;
+        width: 100%;
+    }
+    #contador .texto {
+        color: white;
+        font-family: 'DS-Digital', sans-serif;
+        font-size: 18px;
+        height: 100%;
+        padding-right: 10px;
+        position: absolute;
+        text-align: right;
+        width: 100%;
+    }
+#btn_enviar {
+	background-color:#2abaa9;
+	border:none;
+	border-radius:10px;
+	box-shadow:none;
+	color:white;
+	cursor:pointer;
+	font-family:'Open Sans',sans-serif;
+	font-size:20px;
+	margin-top:6px;
+	padding:10px;
+	width:200px;
+}
+#btn_buscar {
+    margin-top: 0;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+#margen {
+    margin-bottom: 40px;
+}
+#menu {
+	height:150px;
+	width:100%;
+	display:table;
+	margin: 0;
+	padding-top:25px;
+	color:white;
+}
+#menu_wrapper {
+	display:table-cell;
+	vertical-align:middle;
+	font-size:24px;
+}
+	#menu_wrapper div {
+/*		padding:30px;*/
+	}
+a#mostrarTabla{
+    color:#2abaa9;
+}
+#mostrarSeed {
+    margin-top: 10px;
+}
+#msg {
+    font-size: 14.95px;
+    font-weight: bold;
+    color: white;
+}
+    #msg a{
+        color:#2abaa9;
+    }
+#msjVotado {
+    display:none;
+    color:white;
+}
+#nueva {
+    display: table-cell;
+    padding-bottom: 20px;
+}
+    #nueva input {
+        margin-bottom: 16px;
+        text-align: center;
+        border-radius:0px !important;
+    }
+    #nueva img {
+        max-width: 374px;
+    }
+    #nueva a {
+        margin-bottom: 16px;
+    }
+    #nueva input, #nueva a, #nueva img {
+        width:360px;
+    }
+/*.walletinicio {
+    display: table-cell;
+    padding-bottom: 20px;
+}
+    .walletinicio input {
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    .walletinicio img {
+        max-width: 374px;
+    }
+    .walletinicio a {
+        margin-bottom: 16px;
+    }
+    .walletinicio input, .walletinicio a, .walletinicio img {
+        width:360px;
+    }*/
+#welcome div, #qubistry div {
+	width:50%;
+	display:table-cell;
+	vertical-align:middle;
+}
+#logo {
+	padding:30px 0 30px 80px;
+	display:table-cell;
+	vertical-align:middle;
+}
+    #logo img {
+        max-width:420px;
+    }
+#recuperar {
+    display: table-cell;
+    padding-bottom: 20px;
+}
+    #recuperar input {
+/*      width: 400px !important;*/
+        margin-bottom: 16px;
+        text-align: center;
+        border-radius:0px !important;
+    }
+    #recuperar img {
+        max-width: 374px;
+    }
+    #recuperar a {
+        margin-bottom:16px;
+    }
+    #recuperar input, #recuperar a, #recuperar img {
+           width:360px;
+    }
+#seedField {
+    margin-top: 10px;
+    max-width: 520px;
+}
+#th_candidatos {
+    color:white;
+    padding:20px;
+}
+#votacion {
+    width: 90%;
+    display:none;
+    margin: 0 auto;
+}
+#voterinfo {
+    color:white;
+    vertical-align:middle;
+}
+#voter-info {
+    width: 400px;
+    margin-bottom: 10px;
+    margin-top: 0px !important;
+    text-align: center;
+}
+#votes-cast {
+    color: white;
+    margin-bottom: 10px;
+}
+#wallet {
+    width:100%;
+    padding-left:50px;
+    padding-right:100px;
+    display:none;
+    margin-bottom:50px;
+}
+#wallet1 {
+    width: 100%;
+}
+#wallet2 {
+    color: white;
+}
+#walletinfo {
+    display: table-cell;
+}
+    #walletinfo pre {
+        overflow: auto;
+    }
+#wrapper {
+    display:table;
+    width:100%;
+}
+/*#sponsors img {
+	margin-left:200px;
+}*/
+
+div[id^="candidate-"]:not(#candidate-rows) {
+    text-align: center;
+    font-size: 34px;
+}
+
+/* Placeholders */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: white;
+   opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: white;
+   opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: white;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: white;
+}
+@media screen and (max-width: 1360px) {
+    body {
+        background-position: top;
+    }
+}
+@media screen and (max-width: 874px) {
+    #mediascreen {
+        width: 874px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .celdacandidato .celdagrid1, .celdacandidato .celdagrid2 {
+        display:block;
+        text-align: center;
+        width:auto;
+    }
+    #candidate-rows h3 {
+        font-size:18px;
+    }
+    #candidate-rows td {
+        margin-bottom: 10px;
+    }
+    #menu_wrapper {
+        padding-right: 0px;
+    }
+    #nueva, #recuperar{
+        display: table-row;
+    }
+    #nueva input, #nueva a, #nueva img, #recuperar input, #recuperar a, #recuperar img {
+        width:85%;
+    }
+    #nueva a, #recuperar a {
+        font-size: 16px;
+        margin-top: 0;
+    }
+    #nueva input, #recuperar input {
+        margin-top: 10px;
+    }
+    #nueva img, #recuperar img {
+        margin-bottom:40px;
+    }
+    #nueva {
+        padding-bottom: 20px;
+    }
+    #logo {
+        padding: 5px 0 5px 20px;
+    }
+        #logo img {
+            max-width:200px;
+            padding-left: 0;
+        }
+    #th_candidatos h1 {
+        font-size:35px;
+    }
+    div[id^="candidate-"]:not(#candidate-rows) {
+        text-align: center;
+    }
+}
+@media screen and (max-width:640px){
+    #msg a {
+        font-size: 10.5px;
+    }
+    #wallet3 a {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:570px){
+    #seedField {
+        max-width: 370px;
+    }
+}
+@media screen and (max-width:480px){
+    #voterinfo, #walletinfo {
+        display: block;
+    }
+    #voterinfo input, #walletinfo pre {
+        width: 280px;
+        white-space: nowrap;
+    }
+    #voterinfo input {
+        overflow: hidden;
+    }
+    #voterinfo .boton, #walletinfo .boton {
+        width:280px;
+        font-size: 16px;
+    }
+    
+}
+
+@media screen and (max-width: 450px) {
+    .celdacandidato {
+        display: block;
+    }
+    .celdaboba {
+        display: none;
+    }
+    #msg {
+        max-width: 420px;
+    }
+        #msg a {
+            font-size: 9px;
+        }
+}
+
+@media screen and (min-width: 450px) and (max-width: 640px){
+    #candidate-rows td {
+        display: table-cell;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    #menu_wrapper {
+        padding-right: 40px;
+    }
+}
+
+@media screen and (max-width: 375px){
+    #msg {
+        max-width: 280px;
+    }
+        #msg a {
+            font-size: 7.5px;        
+        }
+    #menu {
+        height: 80px;
+    }
+    #th_candidatos h1 {
+        font-size: 27px;
+    }
+}
